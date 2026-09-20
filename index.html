@@ -136,9 +136,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(1rem, 3vw, 2.5rem);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
       width: 100%;
-      max-width: 1400px;
+      max-width: 2100px;
       flex: 1;
       min-height: 0;
     }
@@ -153,13 +153,13 @@
     }
 
     .photo-card.single {
-      width: min(92vw, 920px);
-      height: min(78vh, 820px);
+      width: min(98vw, 1380px);
+      height: min(92vh, 1230px);
     }
 
     .photo-card.half {
-      width: min(46vw, 620px);
-      height: min(72vh, 720px);
+      width: min(48vw, 930px);
+      height: min(88vh, 1080px);
     }
 
     .frame {
@@ -261,14 +261,14 @@
       position: fixed;
       top: 0;
       bottom: 0;
-      width: 28%;
+      width: 50%;
       z-index: 10;
       cursor: pointer;
       background: transparent;
     }
 
-    .nav-zone.left { left: 0; }
-    .nav-zone.right { right: 0; }
+    .nav-zone.left { left: 0; cursor: w-resize; }
+    .nav-zone.right { right: 0; cursor: e-resize; }
 
     /* Soft gold line under titles */
     .gold-line {
@@ -285,8 +285,8 @@
         gap: 1rem;
       }
       .photo-card.half {
-        width: min(90vw, 520px);
-        height: min(38vh, 360px);
+        width: min(94vw, 780px);
+        height: min(42vh, 540px);
       }
       .pair-title {
         top: 0.5rem;
@@ -303,7 +303,7 @@
       <h1>Goldene Hochzeit<br /><span class="gold">Gisela &amp; Rainer</span></h1>
       <div class="gold-line"></div>
       <p class="subtitle">50 Jahre · Damals &amp; Heute</p>
-      <p class="hint">← → zum Blättern</p>
+      <p class="hint">← → oder Klick zum Blättern</p>
     </section>
 
     <!-- Pair 1: Hochzeit / Brautpaar -->
@@ -491,8 +491,21 @@
         }
       });
 
-      document.getElementById("navNext").addEventListener("click", next);
-      document.getElementById("navPrev").addEventListener("click", prev);
+      document.getElementById("navNext").addEventListener("click", function (e) {
+        e.preventDefault();
+        next();
+      });
+      document.getElementById("navPrev").addEventListener("click", function (e) {
+        e.preventDefault();
+        prev();
+      });
+
+      // Klick irgendwo: linke Hälfte zurück, sonst weiter
+      document.addEventListener("click", function (e) {
+        if (e.target.closest(".nav-zone")) return;
+        if (e.clientX < window.innerWidth * 0.5) prev();
+        else next();
+      });
     })();
   </script>
 </body>
