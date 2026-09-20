@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goldene Hochzeit — Gisela &amp; Rainer</title>
+  <style>
+    :root {
+      --bg: #1a1210;
+      --bg-deep: #0f0b0a;
+      --cream: #f5e6c8;
+      --gold: #d4a853;
+      --gold-soft: #e8c878;
+      --burgundy: #5c2a2a;
+      --muted: rgba(245, 230, 200, 0.55);
+      --frame: rgba(212, 168, 83, 0.35);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+      --transition: 0.7s ease-in-out;
+      --transition-reveal: 2.7s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg-deep);
+      color: var(--cream);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      cursor: default;
+      user-select: none;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse 120% 80% at 50% -20%, rgba(92, 42, 42, 0.45), transparent 55%),
+        radial-gradient(ellipse 80% 60% at 80% 100%, rgba(212, 168, 83, 0.08), transparent 50%),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(92, 42, 42, 0.25), transparent 45%),
+        var(--bg-deep);
+    }
+
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      opacity: 0;
+      transition: opacity var(--transition);
+      transition-timing-function: ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    /* Title & closing */
+    .slide.intro,
+    .slide.outro {
+      text-align: center;
+      gap: 1.25rem;
+    }
+
+    .ornament {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--gold);
+      letter-spacing: 0.4em;
+      opacity: 0.85;
+    }
+
+    .slide h1 {
+      font-weight: 300;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      color: var(--cream);
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .slide h1 .gold {
+      color: var(--gold-soft);
+      font-weight: 400;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2.2vw, 1.45rem);
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hint {
+      margin-top: 2.5rem;
+      font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      opacity: 0.75;
+      animation: softPulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 0.9; }
+    }
+
+    .outro-msg {
+      font-size: clamp(1.15rem, 2.8vw, 1.75rem);
+      font-weight: 300;
+      color: var(--cream);
+      max-width: 28em;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+    }
+
+    /* Photo slides */
+    .photo-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 2.5rem);
+      width: 100%;
+      max-width: 1400px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .photo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      max-height: 100%;
+      min-width: 0;
+    }
+
+    .photo-card.single {
+      width: min(92vw, 920px);
+      height: min(78vh, 820px);
+    }
+
+    .photo-card.half {
+      width: min(46vw, 620px);
+      height: min(72vh, 720px);
+    }
+
+    .frame {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow), 0 0 0 1px var(--frame);
+      background: #0a0807;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.25);
+      pointer-events: none;
+    }
+
+    .frame img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .label {
+      font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .pair-title {
+      position: absolute;
+      top: clamp(0.75rem, 2vh, 1.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      z-index: 3;
+    }
+
+    /* Progress */
+    .progress {
+      position: fixed;
+      bottom: clamp(0.9rem, 2.5vh, 1.6rem);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .progress-text {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      min-width: 4.5em;
+      text-align: center;
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(245, 230, 200, 0.22);
+      transition: background 0.35s ease, transform 0.35s ease;
+    }
+
+    .dot.active {
+      background: var(--gold);
+      transform: scale(1.25);
+    }
+
+    /* Click zones (optional) */
+    .nav-zone {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 28%;
+      z-index: 10;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .nav-zone.left { left: 0; }
+    .nav-zone.right { right: 0; }
+
+    /* Soft gold line under titles */
+    .gold-line {
+      width: min(180px, 30vw);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0.35rem auto 0.15rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 700px) {
+      .photo-stage.side-by-side {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .photo-card.half {
+        width: min(90vw, 520px);
+        height: min(38vh, 360px);
+      }
+      .pair-title {
+        top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck" aria-live="polite">
+
+    <!-- 1. Titel -->
+    <section class="slide intro active" data-index="0">
+      <div class="ornament">✦ · ✦ · ✦</div>
+      <h1>Goldene Hochzeit<br /><span class="gold">Gisela &amp; Rainer</span></h1>
+      <div class="gold-line"></div>
+      <p class="subtitle">50 Jahre · Damals &amp; Heute</p>
+      <p class="hint">← → zum Blättern</p>
+    </section>
+
+    <!-- Pair 1: Hochzeit / Brautpaar -->
+    <section class="slide" data-index="1">
+      <p class="pair-title">Hochzeit · Brautpaar</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair1-alt.jpg" alt="Damals – Brautpaar" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="2">
+      <p class="pair-title">Hochzeit · Brautpaar</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair1-neu.jpg" alt="Heute – Brautpaar nachgestellt" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="3">
+      <p class="pair-title">Hochzeit · Brautpaar</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair1-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair1-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 2: Flaschen auf der Couch -->
+    <section class="slide" data-index="4">
+      <p class="pair-title">Flaschen auf der Couch</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair2-alt.jpg" alt="Damals – Flaschen auf der Couch" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="5">
+      <p class="pair-title">Flaschen auf der Couch</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair2-neu.jpg" alt="Heute – Flaschen auf der Couch" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="6">
+      <p class="pair-title">Flaschen auf der Couch</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair2-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair2-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 3: Vorlesen im Wohnzimmer -->
+    <section class="slide" data-index="7">
+      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair3-alt.jpg" alt="Damals – Vorlesen" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="8">
+      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair3-neu.jpg" alt="Heute – Vorlesen" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="9">
+      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair3-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair3-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abschluss -->
+    <section class="slide outro" data-index="10">
+      <div class="ornament">✦ · ✦ · ✦</div>
+      <h1>Herzlichen Glückwunsch<br /><span class="gold">Gisela &amp; Rainer</span></h1>
+      <div class="gold-line"></div>
+      <p class="outro-msg">
+        Fünfzig Jahre voller Erinnerungen und gemeinsamer Momente —<br />
+        und noch so viel Schönes vor euch.
+      </p>
+      <p class="subtitle" style="margin-top: 1.5rem;">Zur Goldenen Hochzeit</p>
+    </section>
+  </div>
+
+  <div class="progress" aria-hidden="true">
+    <div class="dots" id="dots"></div>
+    <span class="progress-text" id="progressText">1 / 11</span>
+  </div>
+
+  <div class="nav-zone left" id="navPrev" title="Zurück"></div>
+  <div class="nav-zone right" id="navNext" title="Weiter"></div>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const total = slides.length;
+      const dotsEl = document.getElementById("dots");
+      const progressText = document.getElementById("progressText");
+      let current = 0;
+      let transitioning = false;
+
+      for (let i = 0; i < total; i++) {
+        const d = document.createElement("span");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        dotsEl.appendChild(d);
+      }
+      const dots = Array.from(dotsEl.querySelectorAll(".dot"));
+
+      // Indices: alt slides 1,4,7 → neu slides 2,5,8 (forward Damals→Heute)
+      const revealFrom = new Set([1, 4, 7]);
+
+      function goTo(index) {
+        if (index < 0 || index >= total || index === current || transitioning) return;
+        const isReveal = index === current + 1 && revealFrom.has(current);
+        const durationMs = isReveal ? 2700 : 700;
+        const durationCss = isReveal ? "var(--transition-reveal)" : "var(--transition)";
+
+        transitioning = true;
+        document.documentElement.style.setProperty("--active-transition", durationCss);
+        slides.forEach(function (s) {
+          s.style.transitionDuration = isReveal ? "2.7s" : "0.7s";
+        });
+
+        slides[current].classList.remove("active");
+        current = index;
+        slides[current].classList.add("active");
+        dots.forEach((d, i) => d.classList.toggle("active", i === current));
+        progressText.textContent = (current + 1) + " / " + total;
+        setTimeout(function () { transitioning = false; }, durationMs);
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      document.addEventListener("keydown", function (e) {
+        const key = e.key;
+        if (key === "ArrowRight" || key === " " || key === "PageDown") {
+          e.preventDefault();
+          next();
+        } else if (key === "ArrowLeft" || key === "PageUp" || key === "Backspace") {
+          e.preventDefault();
+          prev();
+        } else if (key === "Home") {
+          e.preventDefault();
+          goTo(0);
+        } else if (key === "End") {
+          e.preventDefault();
+          goTo(total - 1);
+        }
+      });
+
+      document.getElementById("navNext").addEventListener("click", next);
+      document.getElementById("navPrev").addEventListener("click", prev);
+    })();
+  </script>
+</body>
+</html>
