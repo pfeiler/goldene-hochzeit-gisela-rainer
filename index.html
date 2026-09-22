@@ -72,7 +72,6 @@
       z-index: 2;
     }
 
-    /* Title & closing */
     .slide.intro,
     .slide.outro {
       text-align: center;
@@ -131,7 +130,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* Photo slides */
     .photo-stage {
       display: flex;
       align-items: center;
@@ -215,7 +213,6 @@
       z-index: 3;
     }
 
-    /* Progress */
     .progress {
       position: fixed;
       bottom: clamp(0.9rem, 2.5vh, 1.6rem);
@@ -241,6 +238,9 @@
       display: flex;
       gap: 0.45rem;
       align-items: center;
+      flex-wrap: wrap;
+      max-width: min(90vw, 720px);
+      justify-content: center;
     }
 
     .dot {
@@ -256,7 +256,6 @@
       transform: scale(1.25);
     }
 
-    /* Click zones (optional) */
     .nav-zone {
       position: fixed;
       top: 0;
@@ -270,7 +269,6 @@
     .nav-zone.left { left: 0; cursor: w-resize; }
     .nav-zone.right { right: 0; cursor: e-resize; }
 
-    /* Soft gold line under titles */
     .gold-line {
       width: min(180px, 30vw);
       height: 1px;
@@ -306,12 +304,12 @@
       <p class="hint">← → oder Klick zum Blättern</p>
     </section>
 
-    <!-- Pair 1: Hochzeit / Brautpaar -->
+    <!-- Pair 01: Hochzeit · Brautpaar -->
     <section class="slide" data-index="1">
       <p class="pair-title">Hochzeit · Brautpaar</p>
       <div class="photo-stage">
         <div class="photo-card single">
-          <div class="frame"><img src="images/pair1-alt.jpg" alt="Damals – Brautpaar" /></div>
+          <div class="frame"><img src="images/pair01-alt.jpg" alt="Damals – Hochzeit · Brautpaar" /></div>
           <span class="label">Damals</span>
         </div>
       </div>
@@ -321,7 +319,7 @@
       <p class="pair-title">Hochzeit · Brautpaar</p>
       <div class="photo-stage">
         <div class="photo-card single">
-          <div class="frame"><img src="images/pair1-neu.jpg" alt="Heute – Brautpaar nachgestellt" /></div>
+          <div class="frame"><img src="images/pair01-neu.jpg" alt="Heute – Hochzeit · Brautpaar" /></div>
           <span class="label">Heute</span>
         </div>
       </div>
@@ -331,88 +329,613 @@
       <p class="pair-title">Hochzeit · Brautpaar</p>
       <div class="photo-stage side-by-side">
         <div class="photo-card half">
-          <div class="frame"><img src="images/pair1-alt.jpg" alt="Damals" /></div>
+          <div class="frame"><img src="images/pair01-alt.jpg" alt="Damals" /></div>
           <span class="label">Damals</span>
         </div>
         <div class="photo-card half">
-          <div class="frame"><img src="images/pair1-neu.jpg" alt="Heute" /></div>
+          <div class="frame"><img src="images/pair01-neu.jpg" alt="Heute" /></div>
           <span class="label">Heute</span>
         </div>
       </div>
     </section>
 
-    <!-- Pair 2: Flaschen auf der Couch -->
+    <!-- Pair 02: Hochzeit · Variante -->
     <section class="slide" data-index="4">
-      <p class="pair-title">Flaschen auf der Couch</p>
+      <p class="pair-title">Hochzeit · Variante</p>
       <div class="photo-stage">
         <div class="photo-card single">
-          <div class="frame"><img src="images/pair2-alt.jpg" alt="Damals – Flaschen auf der Couch" /></div>
+          <div class="frame"><img src="images/pair02-alt.jpg" alt="Damals – Hochzeit · Variante" /></div>
           <span class="label">Damals</span>
         </div>
       </div>
     </section>
 
     <section class="slide" data-index="5">
-      <p class="pair-title">Flaschen auf der Couch</p>
+      <p class="pair-title">Hochzeit · Variante</p>
       <div class="photo-stage">
         <div class="photo-card single">
-          <div class="frame"><img src="images/pair2-neu.jpg" alt="Heute – Flaschen auf der Couch" /></div>
+          <div class="frame"><img src="images/pair02-neu.jpg" alt="Heute – Hochzeit · Variante" /></div>
           <span class="label">Heute</span>
         </div>
       </div>
     </section>
 
     <section class="slide" data-index="6">
-      <p class="pair-title">Flaschen auf der Couch</p>
+      <p class="pair-title">Hochzeit · Variante</p>
       <div class="photo-stage side-by-side">
         <div class="photo-card half">
-          <div class="frame"><img src="images/pair2-alt.jpg" alt="Damals" /></div>
+          <div class="frame"><img src="images/pair02-alt.jpg" alt="Damals" /></div>
           <span class="label">Damals</span>
         </div>
         <div class="photo-card half">
-          <div class="frame"><img src="images/pair2-neu.jpg" alt="Heute" /></div>
+          <div class="frame"><img src="images/pair02-neu.jpg" alt="Heute" /></div>
           <span class="label">Heute</span>
         </div>
       </div>
     </section>
 
-    <!-- Pair 3: Vorlesen im Wohnzimmer -->
+    <!-- Pair 03: Flaschen auf der Couch -->
     <section class="slide" data-index="7">
-      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <p class="pair-title">Flaschen auf der Couch</p>
       <div class="photo-stage">
         <div class="photo-card single">
-          <div class="frame"><img src="images/pair3-alt.jpg" alt="Damals – Vorlesen" /></div>
+          <div class="frame"><img src="images/pair03-alt.jpg" alt="Damals – Flaschen auf der Couch" /></div>
           <span class="label">Damals</span>
         </div>
       </div>
     </section>
 
     <section class="slide" data-index="8">
-      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <p class="pair-title">Flaschen auf der Couch</p>
       <div class="photo-stage">
         <div class="photo-card single">
-          <div class="frame"><img src="images/pair3-neu.jpg" alt="Heute – Vorlesen" /></div>
+          <div class="frame"><img src="images/pair03-neu.jpg" alt="Heute – Flaschen auf der Couch" /></div>
           <span class="label">Heute</span>
         </div>
       </div>
     </section>
 
     <section class="slide" data-index="9">
-      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <p class="pair-title">Flaschen auf der Couch</p>
       <div class="photo-stage side-by-side">
         <div class="photo-card half">
-          <div class="frame"><img src="images/pair3-alt.jpg" alt="Damals" /></div>
+          <div class="frame"><img src="images/pair03-alt.jpg" alt="Damals" /></div>
           <span class="label">Damals</span>
         </div>
         <div class="photo-card half">
-          <div class="frame"><img src="images/pair3-neu.jpg" alt="Heute" /></div>
+          <div class="frame"><img src="images/pair03-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 04: Vorlesen im Wohnzimmer -->
+    <section class="slide" data-index="10">
+      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair04-alt.jpg" alt="Damals – Vorlesen im Wohnzimmer" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="11">
+      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair04-neu.jpg" alt="Heute – Vorlesen im Wohnzimmer" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="12">
+      <p class="pair-title">Vorlesen im Wohnzimmer</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair04-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair04-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 05: Vorlesen · Variante -->
+    <section class="slide" data-index="13">
+      <p class="pair-title">Vorlesen · Variante</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair05-alt.jpg" alt="Damals – Vorlesen · Variante" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="14">
+      <p class="pair-title">Vorlesen · Variante</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair05-neu.jpg" alt="Heute – Vorlesen · Variante" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="15">
+      <p class="pair-title">Vorlesen · Variante</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair05-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair05-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 06: Spaß im Garten -->
+    <section class="slide" data-index="16">
+      <p class="pair-title">Spaß im Garten</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair06-alt.jpg" alt="Damals – Spaß im Garten" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="17">
+      <p class="pair-title">Spaß im Garten</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair06-neu.jpg" alt="Heute – Spaß im Garten" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="18">
+      <p class="pair-title">Spaß im Garten</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair06-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair06-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 07: Enkel im Garten -->
+    <section class="slide" data-index="19">
+      <p class="pair-title">Enkel im Garten</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair07-alt.jpg" alt="Damals – Enkel im Garten" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="20">
+      <p class="pair-title">Enkel im Garten</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair07-neu.jpg" alt="Heute – Enkel im Garten" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="21">
+      <p class="pair-title">Enkel im Garten</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair07-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair07-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 08: Blumengruß -->
+    <section class="slide" data-index="22">
+      <p class="pair-title">Blumengruß</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair08-alt.jpg" alt="Damals – Blumengruß" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="23">
+      <p class="pair-title">Blumengruß</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair08-neu.jpg" alt="Heute – Blumengruß" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="24">
+      <p class="pair-title">Blumengruß</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair08-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair08-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 09: Roter Schirm -->
+    <section class="slide" data-index="25">
+      <p class="pair-title">Roter Schirm</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair09-alt.jpg" alt="Damals – Roter Schirm" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="26">
+      <p class="pair-title">Roter Schirm</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair09-neu.jpg" alt="Heute – Roter Schirm" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="27">
+      <p class="pair-title">Roter Schirm</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair09-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair09-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 10: Auf der Schaukel -->
+    <section class="slide" data-index="28">
+      <p class="pair-title">Auf der Schaukel</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair10-alt.jpg" alt="Damals – Auf der Schaukel" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="29">
+      <p class="pair-title">Auf der Schaukel</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair10-neu.jpg" alt="Heute – Auf der Schaukel" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="30">
+      <p class="pair-title">Auf der Schaukel</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair10-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair10-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 11: Kleiner Imbiss -->
+    <section class="slide" data-index="31">
+      <p class="pair-title">Kleiner Imbiss</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair11-alt.jpg" alt="Damals – Kleiner Imbiss" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="32">
+      <p class="pair-title">Kleiner Imbiss</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair11-neu.jpg" alt="Heute – Kleiner Imbiss" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="33">
+      <p class="pair-title">Kleiner Imbiss</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair11-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair11-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 12: Am Familientisch -->
+    <section class="slide" data-index="34">
+      <p class="pair-title">Am Familientisch</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair12-alt.jpg" alt="Damals – Am Familientisch" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="35">
+      <p class="pair-title">Am Familientisch</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair12-neu.jpg" alt="Heute – Am Familientisch" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="36">
+      <p class="pair-title">Am Familientisch</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair12-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair12-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 13: Auf der Straße -->
+    <section class="slide" data-index="37">
+      <p class="pair-title">Auf der Straße</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair13-alt.jpg" alt="Damals – Auf der Straße" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="38">
+      <p class="pair-title">Auf der Straße</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair13-neu.jpg" alt="Heute – Auf der Straße" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="39">
+      <p class="pair-title">Auf der Straße</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair13-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair13-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 14: Labor im Garten -->
+    <section class="slide" data-index="40">
+      <p class="pair-title">Labor im Garten</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair14-alt.jpg" alt="Damals – Labor im Garten" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="41">
+      <p class="pair-title">Labor im Garten</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair14-neu.jpg" alt="Heute – Labor im Garten" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="42">
+      <p class="pair-title">Labor im Garten</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair14-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair14-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 15: Forscherpaar -->
+    <section class="slide" data-index="43">
+      <p class="pair-title">Forscherpaar</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair15-alt.jpg" alt="Damals – Forscherpaar" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="44">
+      <p class="pair-title">Forscherpaar</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair15-neu.jpg" alt="Heute – Forscherpaar" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="45">
+      <p class="pair-title">Forscherpaar</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair15-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair15-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 16: Am Labortisch -->
+    <section class="slide" data-index="46">
+      <p class="pair-title">Am Labortisch</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair16-alt.jpg" alt="Damals – Am Labortisch" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="47">
+      <p class="pair-title">Am Labortisch</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair16-neu.jpg" alt="Heute – Am Labortisch" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="48">
+      <p class="pair-title">Am Labortisch</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair16-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair16-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 17: Große Familie -->
+    <section class="slide" data-index="49">
+      <p class="pair-title">Große Familie</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair17-alt.jpg" alt="Damals – Große Familie" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="50">
+      <p class="pair-title">Große Familie</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair17-neu.jpg" alt="Heute – Große Familie" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="51">
+      <p class="pair-title">Große Familie</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair17-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair17-neu.jpg" alt="Heute" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pair 18: Alle Zusammen -->
+    <section class="slide" data-index="52">
+      <p class="pair-title">Alle Zusammen</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair18-alt.jpg" alt="Damals – Alle Zusammen" /></div>
+          <span class="label">Damals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="53">
+      <p class="pair-title">Alle Zusammen</p>
+      <div class="photo-stage">
+        <div class="photo-card single">
+          <div class="frame"><img src="images/pair18-neu.jpg" alt="Heute – Alle Zusammen" /></div>
+          <span class="label">Heute</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-index="54">
+      <p class="pair-title">Alle Zusammen</p>
+      <div class="photo-stage side-by-side">
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair18-alt.jpg" alt="Damals" /></div>
+          <span class="label">Damals</span>
+        </div>
+        <div class="photo-card half">
+          <div class="frame"><img src="images/pair18-neu.jpg" alt="Heute" /></div>
           <span class="label">Heute</span>
         </div>
       </div>
     </section>
 
     <!-- Abschluss -->
-    <section class="slide outro" data-index="10">
+    <section class="slide outro" data-index="55">
       <div class="ornament">✦ · ✦ · ✦</div>
       <h1>Herzlichen Glückwunsch<br /><span class="gold">Gisela &amp; Rainer</span></h1>
       <div class="gold-line"></div>
@@ -426,7 +949,7 @@
 
   <div class="progress" aria-hidden="true">
     <div class="dots" id="dots"></div>
-    <span class="progress-text" id="progressText">1 / 11</span>
+    <span class="progress-text" id="progressText">1 / 56</span>
   </div>
 
   <div class="nav-zone left" id="navPrev" title="Zurück"></div>
@@ -448,17 +971,15 @@
       }
       const dots = Array.from(dotsEl.querySelectorAll(".dot"));
 
-      // Indices: alt slides 1,4,7 → neu slides 2,5,8 (forward Damals→Heute)
-      const revealFrom = new Set([1, 4, 7]);
+      // Alt slide indices → next neu: 2.7s Damals→Heute reveal
+      const revealFrom = new Set([1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52]);
 
       function goTo(index) {
         if (index < 0 || index >= total || index === current || transitioning) return;
         const isReveal = index === current + 1 && revealFrom.has(current);
         const durationMs = isReveal ? 2700 : 700;
-        const durationCss = isReveal ? "var(--transition-reveal)" : "var(--transition)";
 
         transitioning = true;
-        document.documentElement.style.setProperty("--active-transition", durationCss);
         slides.forEach(function (s) {
           s.style.transitionDuration = isReveal ? "2.7s" : "0.7s";
         });
@@ -500,7 +1021,6 @@
         prev();
       });
 
-      // Klick irgendwo: linke Hälfte zurück, sonst weiter
       document.addEventListener("click", function (e) {
         if (e.target.closest(".nav-zone")) return;
         if (e.clientX < window.innerWidth * 0.5) prev();
